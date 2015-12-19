@@ -1,0 +1,30 @@
+# Site settings
+title: Karen and Jonny's wedding
+email: jonnyburch@gmail.com
+url: http://kazandjonny.co.uk
+description: "We're getting married!"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#ffffff'
+  links: '#219ab3'
+
+# Footer settings
+footer: Your Website
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/SBootstrap
+  - title: facebook
+    url:
+  - title: stack-overflow
+    url: http://stackoverflow.com/questions/tagged/jekyll
+  - title: bitbucket
+    url: http://bitbucket.org/jekyll
+  - title: github
+    url: https://github.com/IronSummitMedia/startbootstrap
+
+# Build settings
+markdown: kramdown
+permalink: pretty
