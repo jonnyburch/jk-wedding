@@ -5488,32 +5488,55 @@ h4,
 h5,
 h6 {
   margin: 0 0 35px;
-  text-transform: uppercase;
   font-family: "garamond-premier-pro-caption",serif;
   font-weight: 400;
   letter-spacing: 1px; }
 
-p {
+p, ol, ul {
   margin: 0 0 25px;
   font-size: 18px;
   line-height: 1.5; }
 
+ol, ul {
+  padding-left: 20px; }
+
 a {
-  color: #219ab3;
+  color: #ec6666;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: #11505d; }
 
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: #11505d; }
+.btn {
+  border: 1px solid #ec6666;
+  font-size: 18px; }
+  .btn:hover, .btn:focus {
+    background-color: #ec6666;
+    color: #fff; }
 
 .light {
   font-weight: 400; }
 
 .front {
   z-index: 10; }
+
+.line, .bottom-line, .top-line {
+  background-color: #ec6666;
+  width: 2px;
+  border: 1px solid #ec6666;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+  left: 50%; }
+
+.bottom-line {
+  height: 50%;
+  top: 50%; }
+
+.top-line {
+  height: 50%; }
 
 /*intro*/
 .intro {
@@ -5528,22 +5551,13 @@ a:focus {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover; }
-  .intro .line {
-    background-color: #e64609;
-    width: 1px;
-    border: 3px solid #e64609;
-    height: 50%;
-    z-index: 5;
-    position: absolute;
-    top: 50%;
-    left: 50%; }
   .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
     color: #333; }
     .intro .intro-body .savethedate {
       background-color: #fff;
-      border: 5px solid #e64609;
+      border: 2px solid #ec6666;
       z-index: 100;
       border-radius: 5px; }
       .intro .intro-body .savethedate .intro-text {
@@ -5557,32 +5571,56 @@ a:focus {
         margin-bottom: 40px;
         font-size: 26px; }
 
-#about .info-box {
-  border: 5px solid #e64609;
+.content-section {
+  position: relative; }
+  .content-section.full-width {
+    width: 100%; }
+  .content-section.coral {
+    background-color: rgba(236, 102, 102, 0.5); }
+  .content-section.darkblue {
+    background-color: #0c1d1f; }
+  .content-section.mint {
+    background-color: rgba(107, 244, 213, 0.5); }
+  .content-section.more-height {
+    min-height: 200px; }
+
+.info-box {
+  border: 2px solid #ec6666;
   background-color: #fff;
   position: relative;
+  margin-bottom: 50px;
   top: -40px;
   border-radius: 5px; }
-  #about .info-box h2 {
+  .info-box h2 {
     margin: 60px 60px 20px; }
-  #about .info-box p {
-    margin: 0 60px 40px; }
+  .info-box p, .info-box ol, .info-box ul {
+    margin: 0 60px 30px; }
+  .info-box.circle {
+    border-radius: 1000px;
+    text-align: center;
+    position: relative;
+    vertical-align: middle; }
+    .info-box.circle p {
+      line-height: 1;
+      margin: 20px; }
+  .info-box.no-overlap {
+    top: 40px; }
 
 /*mobile only*/
 @media (max-width: 766px) {
   .intro {
-    background: url(/img/intro-bg.jpg) no-repeat center center scroll;
     background-size: cover; }
     .intro .intro-text {
       margin-bottom: 20px; }
 
-  #about .info-box h2 {
+  .info-box h2 {
+    font-size: 20px;
     margin: 20px; }
-  #about .info-box p {
-    margin: 0 20px 20px; } }
+  .info-box p, .info-box ol, .info-box ul {
+    margin: 0 20px 15px; } }
 /* desktop only */
 @media (min-width: 767px) {
-  p {
+  p, ol, ul {
     margin: 0 0 35px;
     font-size: 20px;
     line-height: 1.6; }
@@ -5590,14 +5628,16 @@ a:focus {
   .intro {
     height: 100%;
     padding: 0;
-    background: url(/img/intro-bg.jpg) no-repeat center center scroll;
     background-size: cover; }
     .intro .intro-body .intro-text {
       font-size: 25px; }
 
   .ampersand {
     top: 8px;
-    margin-top: 12px !important; } }
+    margin-top: 12px !important; }
+
+  .info-box .btn {
+    margin-bottom: 20px; } }
 ::-moz-selection {
   text-shadow: none;
   background: #fcfcfc;
@@ -5631,12 +5671,12 @@ body {
   font-feature-settings: "dlig"; }
 
 .swash {
-  -moz-font-feature-settings: "swash";
-  -webkit-font-feature-settings: "swash";
-  font-feature-settings: "swash"; }
+  -moz-font-feature-settings: "swsh";
+  -webkit-font-feature-settings: "swsh";
+  font-feature-settings: "swsh"; }
 
 .smallcaps {
-  font-variant-caps: small-caps;
+  font-variant: small-caps;
   -moz-font-feature-settings: "smcp";
   -webkit-font-feature-settings: "smcp";
   font-feature-settings: "smcp"; }
@@ -5647,4 +5687,4 @@ body {
   font-weight: 400 !important;
   position: relative;
   margin: 0 10px;
-  color: #e64609; }
+  color: #ec6666; }
