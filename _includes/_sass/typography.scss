@@ -15,13 +15,13 @@
 }
 
 .swash {
-  -moz-font-feature-settings: "swash";
-  -webkit-font-feature-settings: "swash";
-  font-feature-settings: "swash";
+  -moz-font-feature-settings: "swsh";
+  -webkit-font-feature-settings: "swsh";
+  font-feature-settings: "swsh";
 }
 
 .smallcaps {
-  font-variant-caps: small-caps;
+  font-variant: small-caps;
   -moz-font-feature-settings: "smcp";
   -webkit-font-feature-settings: "smcp";
   font-feature-settings: "smcp";

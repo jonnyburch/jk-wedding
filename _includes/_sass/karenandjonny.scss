@@ -23,30 +23,42 @@ h4,
 h5,
 h6 {
     margin: 0 0 35px;
-    text-transform: uppercase;
     font-family: "garamond-premier-pro-caption",serif;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-p {
+p, ol, ul {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
 }
 
+ol, ul {
+    padding-left: 20px;
+}
+
 a {
-    color: {{ site.color.links }};
+    color: $primary-color;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+
+    &:hover, &:focus {
+        text-decoration: none;
+        color: #11505d;
+    }
 }
 
-a:hover,
-a:focus {
-    text-decoration: none;
-    color: #11505d;
-}
+    .btn {
+        border: 1px solid $primary-color;
+        font-size: 18px;
+
+        &:hover, &:focus {
+            background-color: $primary-color;
+            color: #fff;
+        } 
+    }
 
 .light {
     font-weight: 400;
@@ -55,6 +67,29 @@ a:focus {
 .front {
     z-index:10
 }
+
+.line {
+    background-color: $primary-color;
+    width: 2px;
+    border:$line-thickness solid $primary-color;
+    height:100%;
+    z-index:5;
+    position:absolute;
+    left:50%;
+}
+
+.bottom-line {
+    @extend .line;
+    height:50%;
+    top:50%;
+}
+
+.top-line {
+    @extend .line;
+    height:50%;
+}
+
+
 
 /*intro*/
 
@@ -71,17 +106,6 @@ a:focus {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-
-    .line {
-        background-color: $primary-color;
-        width: 1px;
-        border:3px solid $primary-color;
-        height: 50%;
-        z-index:5;
-        position:absolute;
-        top:50%;
-        left:50%;
-    }
   
     .intro-body {
         display: table-cell;
@@ -90,7 +114,7 @@ a:focus {
 
         .savethedate {
             background-color: #fff;
-            border: 5px solid $primary-color;
+            border: $border-thickness solid $primary-color;
             z-index:100;
             border-radius: $border-radius;
 
@@ -111,21 +135,57 @@ a:focus {
     }
 } 
 
-#about {
+.content-section {
+    position: relative;
 
-    .info-box {
-        border: 5px solid $primary-color;
-        background-color: #fff;
+    &.full-width {
+        width:100%;
+    }
+
+    &.coral {
+        background-color: $pale-coral;
+    }
+    &.darkblue {
+        background-color: $dark-blue;
+    }
+    &.mint {
+        background-color: $pale-mint;
+    }
+
+    &.more-height {
+        min-height: 200px;
+    }
+}
+
+.info-box {
+    border: $border-thickness solid $primary-color;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 50px;
+    top: -40px;
+    border-radius: $border-radius;
+    
+    h2 {
+        margin: 60px 60px 20px;
+    }
+    p, ol, ul {
+        margin: 0 60px 30px;
+    }
+
+    &.circle {
+        border-radius: 1000px;
+        text-align: center;
         position: relative;
-        top: -40px;
-        border-radius: $border-radius;
-        
-        h2 {
-            margin: 60px 60px 20px;
-        }
+        vertical-align: middle;
+
         p {
-            margin: 0 60px 40px;
+            line-height: 1;
+            margin: 20px;
         }
+    }
+
+    &.no-overlap {
+        top: 40px;        
     }
 }
 
@@ -134,7 +194,7 @@ a:focus {
 @media(max-width:766px) {
     
     .intro {
-        background: url(/img/intro-bg.jpg) no-repeat center center scroll;
+        // background: url(/img/intro-bg.jpg) no-repeat center center scroll;
         background-size: cover;
     
         .intro-text {
@@ -142,13 +202,14 @@ a:focus {
         }
     }
 
-    #about {
-        .info-box h2 {
+    .info-box {
+        h2 {
+            font-size: 20px;
             margin: 20px;
         }
 
-        .info-box p {
-            margin: 0 20px 20px;
+        p, ol, ul {
+            margin: 0 20px 15px;
         }
     }
 }
@@ -157,7 +218,7 @@ a:focus {
 
 @media(min-width:767px) {
 
-    p {
+    p, ol, ul {
         margin: 0 0 35px;
         font-size: 20px;
         line-height: 1.6;
@@ -166,7 +227,7 @@ a:focus {
     .intro {
         height: 100%;
         padding: 0;
-        background: url(/img/intro-bg.jpg) no-repeat center center scroll;
+        // background: url(/img/intro-bg.jpg) no-repeat center center scroll;
         background-size: cover;
 
         .intro-body .intro-text {
@@ -177,6 +238,12 @@ a:focus {
     .ampersand {
         top:8px;
         margin-top: 12px !important;
+    }
+
+    .info-box {
+        .btn {
+            margin-bottom: 20px;
+        }
     }
 }
 
