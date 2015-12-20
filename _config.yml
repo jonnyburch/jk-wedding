@@ -1,7 +1,7 @@
 # Site settings
 title: Karen and Jonny's wedding
 email: jonnyburch@gmail.com
-url: http://jonnyburch.github.io/jk-wedding
+url: http://kazandjonny.co.uk
 description: "We're getting married!"
 
 # Color settings (hex-codes without the leading hash-tag)
@@ -28,3 +28,7 @@ social:
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+
+sass:
+  sass_dir: _sass
